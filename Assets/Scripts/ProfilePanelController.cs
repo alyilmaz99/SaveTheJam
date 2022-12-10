@@ -16,9 +16,17 @@ public class ProfilePanelController : MonoBehaviour
     [SerializeField] public Text Militarytext;
     [SerializeField] public Image MilitaryImage;
     [SerializeField] public List<Sprite> Images;
+
+
+
+    public List<GameObject> Red;
+    public List<GameObject> Blue;
+    public List<GameObject> Natural;
+
+    [SerializeField] GroundControl groundControl;
     void Start()
     {
-  
+
         switch (gameController.State)
         {
             case "1.Çað":
@@ -40,6 +48,21 @@ public class ProfilePanelController : MonoBehaviour
                 break;
         }
     }
+    void Update()
+    {/*
+        if (groundControl.ColorList[0]==0)
+        {
+            Natural.Add(groundControl.Ground);
+        }
+         else if (groundControl.ColorList[0] == 1)
+        {
+            Blue.Add(groundControl.Ground);
+        }
+        else if (groundControl.ColorList[0] == 2)
+        {
+            Red.Add(groundControl.Ground);
+        }*/
+    }
     public static Texture2D LoadImage(string filePath)
     {
         Texture2D tex = null;
@@ -54,8 +77,5 @@ public class ProfilePanelController : MonoBehaviour
         return tex;
     }
 
-    void Update()
-    {
-        
-    }
+    
 }

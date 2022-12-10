@@ -9,7 +9,6 @@ public class GroundStats : MonoBehaviour
     [SerializeField] private int science;
     [SerializeField] private int soldier;
     [SerializeField] private int color;
-
     [SerializeField] private int listIndex;
 
     [SerializeField] GroundControl groundControl;
