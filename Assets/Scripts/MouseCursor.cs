@@ -32,16 +32,9 @@ public class MouseCursor : MonoBehaviour
             {
                 Debug.Log("ikii");
                 hit.collider.gameObject.GetComponentInParent<GroundStats>().mouseCheck = true;
-
-                if(parentObject!= hit.collider.gameObject.transform.parent.gameObject)
-                {
-                    if(parentObject != null)
-                    parentObject.GetComponent<GroundStats>().mouseCheck = false;
-                }
-
                 parentObject = hit.collider.gameObject.transform.parent.gameObject;
             }
-            else if(parentObject!=null) {
+            else{
                 parentObject.GetComponent<GroundStats>().mouseCheck = false;
             }
         }
