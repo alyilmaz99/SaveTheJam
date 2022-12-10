@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
         profilePanelController.GoldText.text = Gold.ToString();
         profilePanelController.ScienceText.text = Science.ToString();
         profilePanelController.Militarytext.text = Military.ToString();
-        profilePanelController.StageText.text = State;
     }
 
     
