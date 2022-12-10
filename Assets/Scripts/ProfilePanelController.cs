@@ -27,26 +27,6 @@ public class ProfilePanelController : MonoBehaviour
     void Start()
     {
 
-        switch (gameController.State)
-        {
-            case "1.Çað":
-                StageImage.sprite = Images[0];
-                break;
-            case "2.Çað":
-                StageImage.sprite = Images[1];
-                break;
-            case "3.Çað":
-                StageImage.sprite = Images[2];
-                break;
-            case "4.Çað":
-                StageImage.sprite = Images[3];
-                break;
-            case "5.Çað":
-                StageImage.sprite = Images[4];
-                break;
-            default:
-                break;
-        }
     }
     void Update()
     {/*
