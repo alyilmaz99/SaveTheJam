@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class GameController : MonoBehaviour
     [SerializeField] public int Science;
     [SerializeField] public int Military;
     [SerializeField] public string State;
-
+    [SerializeField] public float timeRemaining = 0;
+    [SerializeField] public Text Timer;
     void Start()
     {
         profilePanelController.GoldText.text = Gold.ToString();
@@ -23,7 +25,13 @@ public class GameController : MonoBehaviour
     
     void Update()
     {
-        
+        if (timeRemaining >= 0)
+        {
+            
+            timeRemaining += Time.deltaTime;
+            Timer.text = timeRemaining.ToString();
+
+        }
     }
     
 }
