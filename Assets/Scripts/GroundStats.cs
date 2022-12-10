@@ -8,12 +8,13 @@ public class GroundStats : MonoBehaviour
 
     [SerializeField] private int gold;
     [SerializeField] private int science;
-    [SerializeField] private int soldier;
+    public int soldier;
     [SerializeField] private int color;
 
     [SerializeField] private int listIndex;
 
     [SerializeField] GroundControl groundControl;
+    [SerializeField] CombatLogic combatLogic;
 
     [SerializeField] private TextMeshPro GoldText;
     [SerializeField] private TextMeshPro ScienceText;
@@ -24,6 +25,9 @@ public class GroundStats : MonoBehaviour
     public bool mouseCheck=false;
     [SerializeField] private GameObject AttackButton;
     [SerializeField] private GameObject UpgradeButton;
+
+    [Header("Combat")]
+    [SerializeField] private GameObject parentObject;
 
 
     void Awake()
@@ -71,5 +75,14 @@ public class GroundStats : MonoBehaviour
         }
     }
 
-
+    public void AttackSystem()
+    {
+        combatLogic.Attacker = transform.gameObject;
+        combatLogic.attackerSoldier = soldier;
+    }
+    public void DefendSystem()
+    {
+        combatLogic.Defender = transform.gameObject;
+        combatLogic.defenderSoldier = soldier;
+    }
 }
